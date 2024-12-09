@@ -9,7 +9,6 @@ export interface RequestMessage extends Message {
   params?:unknown,
 
 }
-
 export interface ResponseMessage extends Message {
   id:number|null,
   result?:unknown,
@@ -27,7 +26,7 @@ export function decodeMessage(bytes:Uint8Array):RequestMessage{
     const [headerBytes, contentBytes] = splitBytes(bytes, "\r\n\r\n");
     const decoder = new TextDecoder();
     const header = decoder.decode(headerBytes);
-    const contentLength = Number(header.split(":")[1]);
+    const contentLength = Number(header.split("Content-Length:")[1]);
     if(isNaN(contentLength)){
       throw new Error("Content Length Not Found!")
     }
@@ -43,7 +42,7 @@ export function decodeMessage(bytes:Uint8Array):RequestMessage{
 
 }
 
-function splitBytes(bytes:Uint8Array, seprator:string):[Uint8Array, Uint8Array]{
+export function splitBytes(bytes:Uint8Array, seprator:string):[Uint8Array, Uint8Array]{
   const encoder = new TextEncoder();
   const separatorBytes = encoder.encode(seprator);
   let index = -1;
