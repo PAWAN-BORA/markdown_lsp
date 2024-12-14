@@ -1,7 +1,2 @@
-mark_lsp 2024-12-09T12:29:20.713Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:8:10):server started!
-mark_lsp 2024-12-09T12:29:20.718Z INFO State.writeResponse (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:47:17):replay to  Content-Length: 128
-
-{"jsonrpc":"2.0","id":1,"result":{"capabilities":{"hoverProvider":true},"serverInfo":{"name":"markdown_lsp","version":"0.0.1"}}}
-mark_lsp 2024-12-09T12:29:21.012Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:20:21):Connect to {"jsonrpc":"2.0","method":"initialized","params":{}}
-mark_lsp 2024-12-09T12:30:26.779Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:8:10):server started!
-mark_lsp 2024-12-09T12:30:26.977Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:20:21):Connect to {"method":"initialized","params":{},"jsonrpc":"2.0"}
+mark_lsp 2024-12-14T05:24:50.135Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:8:10):server started!
+mark_lsp 2024-12-14T05:24:50.172Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:23:21):Connected!

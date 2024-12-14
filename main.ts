@@ -18,7 +18,7 @@ async function start(){
       if(isNaN(contentLength)){
         throw new Error("Content Length Not Found!")
       }
-      const totalLength  =headerBytes.length + 4 + contentBytes.length; 
+      const totalLength = headerBytes.length + 4 + contentBytes.length; 
       if(buffer.length < totalLength){
         continue;
       }

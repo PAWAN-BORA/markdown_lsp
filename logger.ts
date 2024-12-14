@@ -8,7 +8,7 @@ export class Logger {
   }
   static async getLogger(filePath:string, prefix:string){
     try {
-      const file = await Deno.open(filePath, {write:true, read:true, create:true, append:true,})
+      const file = await Deno.open(filePath, {write:true, read:true, create:true, append:false, truncate:true})
       return new Logger(file, prefix)
     } catch {
       throw new Error("Failed to open file.")
