@@ -1,7 +1,7 @@
 import { Logger } from "../logger.ts";
-import { RequestMessage, ResponseMessage, encodeMessage } from "../rpc.ts";
-import { getDefinitionPosition, getHoverWord } from "./analysis.ts";
-import { DefinitionParams, DidChangeTextDocumentParams, DidOpenTextDocumentParams, DidSaveTextDocumentParams, HoverParams, InitializeParams, InitializeResult, Location, Range } from "./types.ts";
+import { NotificationMessage, RequestMessage, ResponseMessage, encodeMessage } from "../rpc.ts";
+import { getCodeActionList, getDefinitionPosition, getHoverWord } from "./analysis.ts";
+import { CodeAction, CodeActionParams, CompletionItem, CompletionParams, DefinitionParams, DidChangeTextDocumentParams, DidOpenTextDocumentParams, DidSaveTextDocumentParams, HoverParams, InitializeParams, InitializeResult, Location, Range, WorkspaceEdit } from "./types.ts";
 
 export class State{
 
@@ -11,11 +11,11 @@ export class State{
   constructor(logger:Logger){
     this.logger = logger;
   } 
-  handleRequest(request:RequestMessage){
+  handleRequest(request:RequestMessage|NotificationMessage){
     switch(request.method) {
       case "initialize": {
         // const params = request.params as InitializeParams;
-        const response = this.initializeResponse(request.id)
+        const response = this.initializeResponse((request as RequestMessage).id)
         this.writeResponse(response)
         break;
       } 
@@ -25,7 +25,6 @@ export class State{
       }
       case "textDocument/didOpen": {
         const params= request.params as DidOpenTextDocumentParams;
-        // this.logger.info(params.textDocument.languageId);
         this.addOrUpdateDocument(params.textDocument.uri, params.textDocument.text);
         break;
       }
@@ -47,18 +46,29 @@ export class State{
       }
       case "textDocument/hover": {
         const params = request.params as HoverParams;
-        const response = this.hoverResponse(request.id, params)
+        const response = this.hoverResponse((request as RequestMessage).id, params)
         this.writeResponse(response)
         break;
       }
       case "textDocument/definition": {
-        this.logger.info(`Document definition!`);
         const params = request.params as DefinitionParams;
-        const response = this.definationResponse(request.id, params)
+        const response = this.definationResponse((request as RequestMessage).id, params)
         this.writeResponse(response)
         break;
       }
-
+      case "textDocument/codeAction": {
+        const params = request.params as CodeActionParams;
+        const response = this.codeActionReponse((request as RequestMessage).id, params)
+        this.writeResponse(response)
+        break;
+      }
+      case "textDocument/completion": {
+        this.logger.info(`completion`);
+        const params = request.params as CompletionParams;
+        const response = this.completionResponse((request as RequestMessage).id, params)
+        this.writeResponse(response)
+        break;
+      }
     }
   }
   private initializeResponse(id:number):ResponseMessage{
@@ -73,6 +83,8 @@ export class State{
           hoverProvider:true,
           textDocumentSync:1,
           definitionProvider:true,
+          codeActionProvider:true,
+          completionProvider:{},
         },
         serverInfo:{
           name:"markdown_lsp",
@@ -133,6 +145,46 @@ Word: ${word}`,
       }
     }
     return result;
+  }
+  private codeActionReponse(id:number, params:CodeActionParams){
+
+    const uri = params.textDocument.uri;
+    const currDocument = this.documents.get(uri);
+    interface codeActionResponse extends Omit<ResponseMessage, "result"> {
+      result: CodeAction[]
+    }
+    const actions = getCodeActionList(currDocument??"", uri)
+    const result:codeActionResponse = {
+      jsonrpc:"2.0",
+      id:id,
+      result:actions    
+    } 
+    return result; 
+  }
+  private completionResponse(id:number, params:CompletionParams){
+    const uri = params.textDocument.uri;
+    const currDocument = this.documents.get(uri);
+    /* interface CompletionResponse extends Omit<ResponseMessage, "result"> {
+      result:{
+        isIncomplete:boolean,
+        items:CompletionItem[]
+      } 
+    } */
+    interface CompletionResponse extends Omit<ResponseMessage, "result"> {
+      result: CompletionItem[]|null
+    }
+    const items:CompletionItem[] = [
+      {label:"first", detail:"this is first Item", documentation:"create for test lsp"},
+      {label:"second", detail:"this is second Item", documentation:"create for test lsp"},
+      {label:"third", detail:"this is third Item", documentation:"create for test lsp"},
+    ]
+    const result:CompletionResponse = {
+      jsonrpc:"2.0",
+      id:id,
+      result:items
+    }
+    return result;
+
   }
   private writeResponse(msg:ResponseMessage){
     const reply = encodeMessage(msg);

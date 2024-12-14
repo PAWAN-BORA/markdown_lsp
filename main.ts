@@ -23,6 +23,8 @@ async function start(){
         continue;
       }
       const request = decodeMessage(buffer.subarray(0, totalLength));
+      // logger.info(`getting: ${JSON.stringify(request)}`);
+      logger.info(`getting: ${request.method}`);
       state.handleRequest(request);
       buffer = buffer.slice(totalLength);
 

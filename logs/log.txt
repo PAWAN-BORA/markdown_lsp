@@ -1,2 +1,113 @@
-mark_lsp 2024-12-14T05:24:50.135Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:8:10):server started!
-mark_lsp 2024-12-14T05:24:50.172Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:23:21):Connected!
+mark_lsp 2024-12-14T15:57:37.784Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:8:10):server started!
+mark_lsp 2024-12-14T15:57:37.791Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: initialize
+mark_lsp 2024-12-14T15:57:37.981Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: initialized
+mark_lsp 2024-12-14T15:57:37.982Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:23:21):Connected!
+mark_lsp 2024-12-14T15:57:40.648Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:40.650Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:57:40.650Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:57:41.695Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:42.990Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:42.993Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:57:42.993Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:57:43.884Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:44.448Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:44.450Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:57:44.450Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:57:49.416Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:50.173Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:50.337Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:50.894Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:51.038Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:53.378Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:53.521Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:53.671Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:53.897Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:54.060Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:54.061Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: $/cancelRequest
+mark_lsp 2024-12-14T15:57:54.611Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:54.761Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:54.891Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: $/cancelRequest
+mark_lsp 2024-12-14T15:57:54.892Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:55.041Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:55.192Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:55.342Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:55.623Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:55.624Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: $/cancelRequest
+mark_lsp 2024-12-14T15:57:55.625Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:57:55.626Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:57:56.450Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:56.601Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:56.872Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:57.034Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:57.035Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:57:57.035Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:57:57.183Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:57.361Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:57.511Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:57.973Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:58.892Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:59.037Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:59.189Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:59.339Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:57:59.489Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:01.090Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:01.234Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:02.098Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:02.247Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:02.528Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:02.529Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: $/cancelRequest
+mark_lsp 2024-12-14T15:58:02.530Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:02.530Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:02.690Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:02.850Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:04.630Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:05.158Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:05.309Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:05.013Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:05.626Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:05.769Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:05.917Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:06.067Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:06.252Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:08.215Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:08.877Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:09.030Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:09.419Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:09.566Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:09.958Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:10.102Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:10.401Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:10.403Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: $/cancelRequest
+mark_lsp 2024-12-14T15:58:10.551Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:10.917Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:11.130Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:11.289Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:11.289Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: $/cancelRequest
+mark_lsp 2024-12-14T15:58:11.290Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:11.290Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:11.654Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:11.878Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:11.879Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:11.880Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:12.287Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:12.432Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:12.433Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:12.434Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:13.072Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:16.769Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:16.770Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:16.770Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:18.004Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:18.992Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:18.996Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:18.996Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:20.285Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:21.035Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:21.038Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/completion
+mark_lsp 2024-12-14T15:58:21.039Z INFO State.handleRequest (file:///home/pawan/projects/deno/markdown_lsp/src/state.ts:66:21):completion
+mark_lsp 2024-12-14T15:58:21.620Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:21.769Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:22.140Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:23.601Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:24.110Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: textDocument/didChange
+mark_lsp 2024-12-14T15:58:26.149Z INFO start (file:///home/pawan/projects/deno/markdown_lsp/main.ts:27:14):getting: shutdown

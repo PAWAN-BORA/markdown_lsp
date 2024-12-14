@@ -14,12 +14,16 @@ export interface ResponseMessage extends Message {
   result?:unknown,
   error?:unknown,
 }
+export interface NotificationMessage extends Message {
+  method:string,
+  params?:unknown,
+}
 export function encodeMessage(msg:ResponseMessage):string{
   const msgStr = JSON.stringify(msg);
   return `Content-Length: ${msgStr.length}\r\n\r\n${msgStr}`
 }
 
-export function decodeMessage(bytes:Uint8Array):RequestMessage{
+export function decodeMessage(bytes:Uint8Array):RequestMessage|NotificationMessage{
 
   try {
 
@@ -32,7 +36,7 @@ export function decodeMessage(bytes:Uint8Array):RequestMessage{
     }
     const content = decoder.decode(contentBytes.subarray(0, contentLength));
     try {
-      return JSON.parse(content) as RequestMessage;
+      return JSON.parse(content);
     } catch {
       throw new Error("Invalid Json")
     }
