@@ -18,8 +18,9 @@ export interface NotificationMessage extends Message {
   method:string,
   params?:unknown,
 }
-export function encodeMessage(msg:ResponseMessage):string{
+export function encodeMessage(msg:ResponseMessage|NotificationMessage):string{
   const msgStr = JSON.stringify(msg);
+  const bufferLength = new TextEncoder().encode(msgStr).length;
   return `Content-Length: ${msgStr.length}\r\n\r\n${msgStr}`
 }
 

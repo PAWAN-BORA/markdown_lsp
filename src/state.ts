@@ -1,7 +1,8 @@
+import { white } from "jsr:@std/internal@^1.0.5/styles";
 import { Logger } from "../logger.ts";
 import { NotificationMessage, RequestMessage, ResponseMessage, encodeMessage } from "../rpc.ts";
-import { getCodeActionList, getDefinitionPosition, getHoverWord } from "./analysis.ts";
-import { CodeAction, CodeActionParams, CompletionItem, CompletionParams, DefinitionParams, DidChangeTextDocumentParams, DidOpenTextDocumentParams, DidSaveTextDocumentParams, HoverParams, InitializeParams, InitializeResult, Location, Range, WorkspaceEdit } from "./types.ts";
+import { getCodeActionList, getDefinitionPosition, getDiagnositics, getHoverWord } from "./analysis.ts";
+import { CodeAction, CodeActionParams, CompletionItem, CompletionParams, DefinitionParams, Diagnostic, DidChangeTextDocumentParams, DidOpenTextDocumentParams, DidSaveTextDocumentParams, HoverParams, InitializeParams, InitializeResult,  Range, PublishNotification } from "./types.ts";
 
 export class State{
 
@@ -25,13 +26,32 @@ export class State{
       }
       case "textDocument/didOpen": {
         const params= request.params as DidOpenTextDocumentParams;
-        this.addOrUpdateDocument(params.textDocument.uri, params.textDocument.text);
+        const diagnositics = this.addOrUpdateDocument(params.textDocument.uri, params.textDocument.text);
+        const result:PublishNotification = {
+          jsonrpc:"2.0",
+          method:"textDocument/publishDiagnostics",
+          params:{
+            uri:params.textDocument.uri,
+            diagnostics:diagnositics
+          },
+        } 
+        this.writeResponse(result)
         break;
       }
       case "textDocument/didChange": {
         const params= request.params as DidChangeTextDocumentParams;
         for(const content of params.contentChanges){
-          this.addOrUpdateDocument(params.textDocument.uri, content.text);
+          const diagnositics = this.addOrUpdateDocument(params.textDocument.uri, content.text);
+
+          const result:PublishNotification = {
+            jsonrpc:"2.0",
+            method:"textDocument/publishDiagnostics",
+            params:{
+              uri:params.textDocument.uri,
+              diagnostics:diagnositics
+            },
+          } 
+          this.writeResponse(result)
         }
         break;
       }
@@ -131,8 +151,6 @@ Word: ${word}`,
     const position = params.position;
     const currDocument = this.documents.get(uri);
     const definitionPosition = getDefinitionPosition(currDocument??"", position);
-    this.logger.info(`defi_pos ${JSON.stringify(definitionPosition)}`)
-    this.logger.info(`curr_pos ${JSON.stringify(position)}`)
     const result:DefinitionResponse = {
       jsonrpc:"2.0",
       id:id,
@@ -157,7 +175,7 @@ Word: ${word}`,
     const result:codeActionResponse = {
       jsonrpc:"2.0",
       id:id,
-      result:actions    
+      result: actions   
     } 
     return result; 
   }
@@ -186,12 +204,17 @@ Word: ${word}`,
     return result;
 
   }
-  private writeResponse(msg:ResponseMessage){
-    const reply = encodeMessage(msg);
-    this.writer.write(new TextEncoder().encode(reply));
+  private writeResponse(msg:ResponseMessage|NotificationMessage){
+    const reply = new TextEncoder().encode(encodeMessage(msg));
+    let byteWritten = 0;
+    while(byteWritten<reply.length){
+      const written = this.writer.writeSync(reply.subarray(byteWritten));
+      byteWritten += written;
+    }
   }
-  private addOrUpdateDocument(uri:string, text:string){
+  private addOrUpdateDocument(uri:string, text:string):Diagnostic[]{
     this.documents.set(uri, text)
+    return getDiagnositics(text, this.logger)
   }
   private removeDocument(uri:string){
     this.documents.delete(uri);

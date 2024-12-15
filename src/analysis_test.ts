@@ -1,5 +1,7 @@
 import { assertEquals } from "@std/assert/equals";
 import { getDefinitionPosition } from "./analysis.ts";
+import { State } from "./state.ts";
+import { encodeMessage, ResponseMessage } from "../rpc.ts";
 
 const sampleText = `[![progress-banner](https://backend.codecrafters.io/progress/http-server/38002165-fcac-415a-89e4-ee4733f9dbb9)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
 
@@ -30,7 +32,6 @@ Time to move on to the next stage!
 Note: This section is for stages 2 and beyond.`
 
 Deno.test(function testGetDefinitionPos(){
-  
   const position = {line:19, character:14}
   const defiPosition = getDefinitionPosition(sampleText, position);
   assertEquals(defiPosition.line, 2);

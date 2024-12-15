@@ -1,3 +1,4 @@
+import { NotificationMessage } from "../rpc.ts";
 
 export interface InitializeParams {
   workDoneToken:number|string
@@ -103,4 +104,25 @@ export interface CompletionItem {
   detail:string,
   documentation:string,
 
+}
+
+export enum DiagnositicSeverity {
+  Error=1,
+  Warning=2,
+  Information=3,
+  Hint=4
+}
+export interface Diagnostic {
+  range:Range,
+  message:string,
+  severity:DiagnositicSeverity
+  source:string,
+}
+export interface PublishDiagnosticsParams {
+  uri:string,
+  version?:number,
+  diagnostics:Diagnostic[]
+}
+export interface PublishNotification extends Omit<NotificationMessage, "params"> {
+  params:PublishDiagnosticsParams
 }

@@ -1,5 +1,5 @@
 import { Logger } from "../logger.ts";
-import { TextEdit, CodeAction, Position, Range } from "./types.ts";
+import { TextEdit, CodeAction, Position, Range, Diagnostic, DiagnositicSeverity } from "./types.ts";
 
 
 export function getHoverWord(text:string, position:Position):string{
@@ -91,6 +91,59 @@ export function getCodeActionList(text:string, uri:string):CodeAction[]{
     })
   }
   return result;
+
+}
+
+export function getDiagnositics(text:string, logger:Logger):Diagnostic[]{
+  const diagnostics:Diagnostic[] = [];
+  const lines = text.split("\n");
+  
+  const charSeparator = [" ", ":", "[", "]", "(", ")", ".", "`"]
+  const httpObj = {current:"http", message:"Should use https instead of http"}
+  const gitObj = {current:"git", message:"Providing Git command in the explanation is great choice"}
+  const bunObj = {current:"bun", message:"Should use deno instead of bun"}
+  for(let i=0; i<lines.length; i++){
+    const line = lines[i];
+    let currWord = "";
+    for(let j=0; j<line.length; j++){
+      const char = line[j];
+      const isSeparator = charSeparator.includes(char);
+      if(!isSeparator){
+        currWord += char;
+      }
+      if(isSeparator || j==line.length){
+        const range:Range = {
+          start:{line:i, character:j-currWord.length},
+          end:{line:i, character:j},
+        }
+        if(currWord.toLowerCase()==httpObj.current){
+          diagnostics.push({
+            source:"https://developer.mozilla.org/en-US/docs/Glossary/HTTPS",
+            severity:DiagnositicSeverity.Warning,
+            message:httpObj.message,
+            range:range,
+          })
+        } else if(currWord.toLowerCase()==gitObj.current){
+          diagnostics.push({
+            source:"https://git-scm.com/",
+            severity:DiagnositicSeverity.Information,
+            message:gitObj.message,
+            range:range,
+          })
+        } else if(currWord.toLowerCase()==bunObj.current){
+          diagnostics.push({
+            source:"https://deno.com/",
+            severity:DiagnositicSeverity.Error,
+            message:bunObj.message,
+            range:range,
+          })
+        }
+
+        currWord = "";
+      }
+    }
+  }
+  return diagnostics;
 
 }
 

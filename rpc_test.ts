@@ -24,6 +24,6 @@ Deno.test(function testDecodeMessage(){
   const decodedData = decodeMessage(byteData);
 
   assertEquals(decodedData.method, "initialize")
-  assertEquals(decodedData.id, 4)
+  assertEquals((decodedData as ResponseMessage).id, 4)
   assertEquals(decodedData.jsonrpc, "2.0")
 })
